@@ -169,7 +169,7 @@
                             "value": "6.5.0"
                         },
                         {
-                            "name": "[concat(parameters('storageAccountName'), '_STORAGE')]",
+                            "name": "storageConnectionString",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', parameters('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountID'),'2015-05-01-preview').key1)]"
                         },
                         {
@@ -179,6 +179,14 @@
                         {
                             "name": "outputEventHubConnectionString",
                             "value": "[concat('Endpoint=sb://', variables('eventHubServiceBusEndpointName'),'/;SharedAccessKeyName=', parameters('authorizationRulesName'), ';SharedAccessKey=', listKeys( resourceId('Microsoft.EventHub/namespaces/AuthorizationRules', parameters('eventHubNamespace'), parameters('authorizationRulesName')), '2017-04-01').primaryKey, ';EntityPath=', toLower(parameters('eventHubName')))]"
+                        },
+                        {
+                            "name": "outputEventHubPath",
+                            "value": "witsmldatahub"
+                        },
+                        {
+                            "name": "outputQueue",
+                            "value": "witsmldatahub"
                         }
                     ]
                 }
