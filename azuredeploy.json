@@ -186,7 +186,7 @@
                         },
                         {
                             "name": "outputQueue",
-                            "value": "witsmldatahub"
+                            "value": "witsmlparseddata"
                         }
                     ]
                 }
